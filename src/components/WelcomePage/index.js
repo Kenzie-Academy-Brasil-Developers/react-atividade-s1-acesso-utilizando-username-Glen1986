@@ -1,11 +1,17 @@
 const WelcomePage = ({ user, setIsLoggedIn }) => {
+
+  const HandleLogout = ({isLoggedIn}) => {
+ setIsLoggedIn(
+ isLoggedIn = false
+  );
+}
   return(
   <section>
     <div>
-      <input type="text" value = {user} />
+      <h1>Hola que tal, {user}</h1>
     </div>
-    <button>login</button>
-    </section>
+    <button onClick = {HandleLogout}>sair</button>
+  </section>
   )
 }
 export default WelcomePage;
