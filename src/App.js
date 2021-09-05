@@ -1,23 +1,26 @@
-import './App.css';
-import {useState} from 'react';
 import GetUserComponent from './components/GetUserComponent'
-import WelcomePage from './components/WelcomePage'
+import WellcomePage from './components/WellcomePage'
+import './App.css';
+import { useState } from 'react';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState("")
+  const[isLoggedIn, setIsLoggedIn]=useState(false)
+  const[userInput, setUserInput]=useState("");
+  const[userList, setUserList]=useState([""]);
 
-  if(isLoggedIn === false){
+ if(isLoggedIn === false){
     return(
   <div className="App">
       <div className="App-header">
-        <GetUserComponent
-              user = {user}
-              setUser ={setUser}
-              isLoggedIn = {isLoggedIn}
-              setIsLoggedIn = {setIsLoggedIn}
-            />
-      </div>
+        <GetUserComponent 
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          userInput = {userInput}
+          setUserInput = {setUserInput}
+          userList = {userList}
+          setUserList = {setUserList}
+        />
+     </div>
     </div>  
     )
   }else{
@@ -25,16 +28,19 @@ function App() {
 
  <div className="App">
       <div className="App-header">
-       <WelcomePage
-          user = {user}
-          setUser ={setUser}
-          isLoggedIn = {isLoggedIn}
-          setIsLoggedIn = {setIsLoggedIn}
-        />
+        <WellcomePage
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          userInput = {userInput}
+          setUserInput = {setUserInput}
+          userList = {userList}
+          setUserList = {setUserList}
+        ></WellcomePage>
      </div>
     </div>
     )
-  } 
+  }
+  
 }
 
 export default App;
