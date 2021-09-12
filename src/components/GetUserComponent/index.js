@@ -12,7 +12,7 @@ const GetUserComponent =({setIsLoggedIn, userInput, setUserInput, userList, setU
     <h3>{userInput}</h3>
     <input value={userInput}
            onChange={e=>setUserInput(e.target.value)} 
-             type="text" /> <br/>
+           type="text" /> <br/>
    <button href="#" onClick={(e) => HandleLogin(userInput)}>Acessar com o nome</button>
  
   </form>
